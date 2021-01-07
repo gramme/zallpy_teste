@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<title>Formulário</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css">
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+	<script src="js/main.js"></script>
+
+</head>
+<body>
+<div class="container-fluid p-4 mb-4 text-light bg-dark">
+	<div class="container">
+		<h1 class="display-4">Cadastro</h1>	
+	</div>
+</div>
+<div class="container bg-light pt-2">
+	<form action="" class="needs-validation" novalidate onsubmit="return validaForm()" id="cad">
+		<div class="form-group">
+			<label for="nomeCompleto">Nome Completo *</label>
+			<input type="text" class="form-control col-sm-6" id="nomeCompleto" maxlength="80"
+			placeholder="Informe o Nome Completo" name="nomeCompleto" required>
+		</div>
+
+		<div class="form-group">
+			<label for="dataNasc">Data de Nascimento *</label>
+			<input type="text" class="form-control col-sm-3" id="dataNasc" maxlength="10"
+			placeholder="Informe a Data de Nascimento" name="dataNasc" required
+			onkeypress="mascara(this, mdata)">
+		</div>
+
+		<div class="form-group">
+			<label for="cpf">CPF *</label>
+			<input type="text" class="form-control col-sm-3" id="cpf" maxlength="14" 
+			placeholder="Informe o CPF" name="cpf" required
+			onkeypress="mascara(this, valida_cpf)">
+		</div>
+
+		<div class="form-group">
+			<label for="celular">Celular *</label>
+			<input type="text" class="form-control col-sm-3" id="celular" maxlength="15"
+			placeholder="Informe o DDD + Número" name="celular" required
+			onkeypress="mascara(this, valida_telefone)">
+		</div>
+
+		<div class="form-group">
+			<label for="email">E-mail *</label>
+			<input type="email" class="form-control col-sm-6" id="email" maxlength="80"
+			placeholder="Informe o E-mail" name="email" required>
+		</div>
+
+		<div class="form-group">
+			<label for="cep">CEP *</label>
+			<input type="text" class="form-control col-sm-3" id="cep" maxlength="9"
+			placeholder="Informe o CEP" name="cep" required
+			onkeypress="mascara(this, valida_cep)">
+		</div>
+
+		<div class="form-group">
+			<label for="logradouro">Logradouro *</label>
+			<input type="text" class="form-control col-sm-6" id="logradouro" maxlength="80"
+			placeholder="Informe o Logradouro" name="logradouro" required>
+		</div>
+
+		<div class="form-group">
+			<label for="numero">Número *</label>
+			<input type="number" class="form-control col-sm-3" id="numero" 
+			placeholder="Informe o Número" name="numero" required
+			onkeypress="mascara(this, soNumeros)">
+		</div>
+
+		<div class="form-group">
+			<label for="complemento">Complemento</label>
+			<input type="text" class="form-control col-sm-6" id="complemento" maxlength="50"
+			placeholder="Informe o Complemento" name="complemento">
+		</div>
+		
+		<div class="form-group">
+			<label for="bairro">Bairro *</label>
+			<input type="text" class="form-control col-sm-6" id="bairro" maxlength="50"
+			placeholder="Informe o Bairro" name="bairro" required>
+		</div>
+		
+		<div class="form-group">
+			<label for="cidade">Cidade *</label>
+			<input type="text" class="form-control col-sm-6" id="cidade" maxlength="50"
+			placeholder="Informe a Cidade" name="cidade" required>
+		</div>
+
+		<div class="form-group">
+			<label for="uf">UF *</label>
+			<input type="text" class="form-control col-sm-3" id="uf" maxlength="2" 
+			placeholder="Informe UF" name="uf" required
+			onkeypress="mascara(this, soLetras)">
+		</div>
+
+		<div class="form-group">
+			<label for="dscBio">Descrição (Bio) *</label>
+			<textarea class="form-control col-sm-6" rows="5" id="dscBio" maxlength="500"
+			placeholder="Fale sobre você" name="dscBio" required></textarea>
+		</div>
+
+		<button type="submit" class="btn btn-dark mb-2">Enviar</button>
+	</form>
+</div>
+</body>
+</html>
